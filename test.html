@@ -1,91 +1,14 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Subal - Portfolio</title>
-</head>
-<body>
+<input id="nameInput" placeholder="Your name">
+<p id="out"></p>
 
-  <header>
-    <h1>Subal Ghimire</h1>
-    <nav>
-      <a href="#about">About</a> |
-      <a href="#skills">Skills</a> |
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<script>
+  const input = document.querySelector("#nameInput");
+  const out = document.querySelector("#out");
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am a BCA student learning web development.</p>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS (learning tomorrow)</li>
-        <li>JavaScript (coming soon)</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <label>Name:</label><br>
-        <input type="text"><br><br>
-        <label>Email:</label><br>
-        <input type="email"><br><br>
-        <button>Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>Made by Subal &copy; 2026</p>
-  </footer>
-
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 10px;
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      const typed = input.value;
+      out.textContent = "Hello, " + typed + "!";
     }
-
-    .item {
-      background: lightblue;
-      padding: 30px;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="grid">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-    <div class="item">8</div>
-
-    <div class="item">9</div>
-    <div class="item">10</div>
-    <div class="item">11</div>
-    <div class="item">12</div>
-    <div class="item">13</div>
-    <div class="item">14</div>
-    <div class="item">15</div>
-    <div class="item">16</div>
-  </div>
-
-</body>
-</html>
+  });
+</script>
