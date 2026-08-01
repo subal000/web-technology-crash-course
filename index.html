@@ -1,19 +1,24 @@
-<form id="form">
-  <input id="task" placeholder="New task">
-  <button>Add</button>
-</form>
-<ul id="list"></ul>
+<button id="spidey">🕷️ Spider-Man</button>
+<button id="random">🎲 Random hero</button>
+<div id="hero" style="margin-top:14px"></div>
 
 <script>
-  const form = document.querySelector("#form");
-  const task = document.querySelector("#task");
+  async function getHero(id) {
+    const res = await fetch("https://akabab.github.io/superhero-api/api/id/" + id + ".json");
+    const hero = await res.json();
+    console.log("hero:", hero);   // 👀 boxes inside boxes: powerstats, images, biography...
+    document.querySelector("#hero").innerHTML = `
+      <img src="${hero.images.lg}" width="170" style="border-radius:12px">
+      <h3>${hero.name}</h3>
+      <p>Real name: ${hero.biography.fullName || "unknown"}</p>
+      <p>💪 Strength ${hero.powerstats.strength} · ⚡ Speed ${hero.powerstats.speed} · 🧠 Intelligence ${hero.powerstats.intelligence}</p>`;
+  }
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();               // stop the page reload
-    if (task.value === "") return;
-    const li = document.createElement("li");
-    li.textContent = task.value;
-    document.querySelector("#list").appendChild(li);
-    task.value = "";                  // clear the box
+  document.querySelector("#spidey").addEventListener("click", () => getHero(620));
+  document.querySelector("#random").addEventListener("click", () => {
+    const id = Math.floor(Math.random() * 731) + 1;   // heroes are 1 to 731
+    getHero(id);
   });
+
+  getHero(620);   // Spider-Man loads first
 </script>
