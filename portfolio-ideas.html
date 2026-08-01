@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio — Ideas & Hints</title>
+<style>
+  body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px 60px;color:#1b1b28;line-height:1.65;background:#faf9fb}
+  h1{font-size:1.7rem;margin-bottom:4px}
+  .lead{color:#6a6a7d;margin-bottom:8px}
+  .hero-note{background:#ede9fe;border:1px solid #ddd6fe;border-radius:12px;padding:16px 20px;margin:18px 0 30px;line-height:1.55}
+  .hero-note b{color:#5b21b6}
+  h2{font-size:1.25rem;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+  .card{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px 20px;margin-bottom:12px;box-shadow:0 2px 8px rgba(20,15,60,.03)}
+  .card h3{font-size:1.02rem;margin-bottom:3px}
+  .card p{color:#555;font-size:.93rem;margin-bottom:0}
+  .search{display:inline-block;margin-top:8px;font-size:.82rem;background:#f0eefe;color:#5b21b6;padding:3px 10px;border-radius:999px;font-weight:600}
+  .lvl{float:right;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 9px;border-radius:999px}
+  .easy{background:#dcfce7;color:#15803d}.mid{background:#fef3c7;color:#b45309}.adv{background:#ede9fe;color:#6d28d9}
+  details{margin-top:10px;border-top:1px solid #f0f0f0;padding-top:8px}
+  summary{cursor:pointer;color:#6d5cf6;font-weight:600;font-size:.88rem;outline:none}
+  pre{background:#1e1e2e;color:#e6e6f0;padding:12px 14px;border-radius:8px;overflow-x:auto;font-family:"SF Mono",Consolas,monospace;font-size:.78rem;line-height:1.5;margin-top:8px;white-space:pre-wrap}
+  code{background:#ede9fe;color:#5b21b6;padding:1px 6px;border-radius:5px;font-family:"SF Mono",Consolas,monospace;font-size:.88em}
+  pre code{background:none;color:inherit;padding:0}
+  .online{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:18px 22px;margin-top:24px}
+  .online h2{margin-top:0}
+  footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:34px}
+</style></head>
+<body>
+  <h1>🎨 Your Portfolio — Ideas &amp; Hints</h1>
+  <p class="lead">You've got the starter. Now make it <b>yours</b>.</p>
+  <div class="hero-note">
+    <b>This page is now yours to break and rebuild.</b> Start by putting your real details in, then change anything you
+    like, colours, layout, animations. The best part: <b>try things we never taught you.</b> Search the internet, copy an
+    idea, get it working. That's exactly how every developer learns. The <span class="search">🔍 search: ...</span> tags
+    below tell you what to look up.
+  </div>
+
+  <h2>✏️ Step 1 — Make it truly yours</h2>
+  <div class="card"><span class="lvl easy">Start here</span><h3>Fill in your real details</h3>
+    <p>In the starter, every editable spot is marked <code>✏️ EDIT</code>. Change your name, photo, tagline, about text, skills, email and social links.</p></div>
+  <div class="card"><span class="lvl easy">Start here</span><h3>Link your real projects</h3>
+    <p>Put the projects you built this week in the Projects cards, and set each card's <code>href="..."</code> to the live link (once you put them online, see the bottom).</p></div>
+  <div class="card"><h3>Add more sections</h3>
+    <p>Copy a <code>&lt;section&gt;</code> block to add Education, Experience, Hobbies, or a Resume download button (link to a PDF).</p></div>
+
+  <h2>🎨 Step 2 — Design ideas</h2>
+  <div class="card"><span class="lvl easy">Easy</span><h3>Recolour the whole site</h3>
+    <p>Change the <code>--accent</code> variable at the top of the CSS, everything follows. Grab a nice palette online.</p>
+    <span class="search">🔍 search: color palette generator (try coolors.co)</span></div>
+  <div class="card"><span class="lvl easy">Easy</span><h3>Change the fonts</h3>
+    <p>Browse Google Fonts, pick two, swap the <code>&lt;link&gt;</code> and the <code>font-family</code> lines.</p>
+    <span class="search">🔍 search: google fonts</span></div>
+  <div class="card"><span class="lvl mid">Medium</span><h3>Add icons</h3>
+    <p>Use real icons for your social links instead of text.</p>
+    <span class="search">🔍 search: font awesome icons  /  lucide icons</span></div>
+  <div class="card"><span class="lvl mid">Medium</span><h3>Fancy hero background</h3>
+    <p>Give the hero a gradient or pattern background.</p>
+    <span class="search">🔍 search: css gradient generator  /  css background patterns</span></div>
+  <div class="card"><span class="lvl adv">Advanced</span><h3>Glass / blur cards</h3>
+    <p>That frosted-glass look on cards.</p>
+    <span class="search">🔍 search: glassmorphism css</span></div>
+
+  <h2>⚡ Step 3 — JavaScript ideas</h2>
+  <div class="card"><span class="lvl easy">Easy</span><h3>Swap the dark-mode icon</h3>
+    <p>The starter already toggles ☀️/🌙, tweak it, or add a smooth colour transition.</p></div>
+  <div class="card"><span class="lvl mid">Medium</span><h3>Typing effect for your tagline</h3>
+    <p>Make the tagline type itself out and cycle through phrases.</p>
+    <span class="search">🔍 search: typing effect javascript  /  typed.js</span>
+    <details><summary>Peek at a simple version</summary>
+      <pre><code>&lt;!-- put &lt;span id="typed"&gt;&lt;/span&gt; in your HTML --&gt;
+const words = ["a web developer", "a problem solver", "a creator"];
+let w = 0, c = 0;
+const el = document.querySelector("#typed");
+function type() {
+  el.textContent = words[w].slice(0, c++);
+  if (c > words[w].length) { c = 0; w = (w + 1) % words.length; setTimeout(type, 1200); }
+  else setTimeout(type, 90);
+}
+type();</code></pre></details></div>
+  <div class="card"><span class="lvl mid">Medium</span><h3>"Back to top" button</h3>
+    <p>A button that appears when you scroll down and glides you back up.</p>
+    <details><summary>Peek at the code</summary>
+      <pre><code>const top = document.createElement("button");
+top.textContent = "↑";
+top.style.cssText = "position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:50%;background:var(--accent);color:#fff;cursor:pointer;display:none";
+document.body.appendChild(top);
+top.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+window.onscroll = () => top.style.display = window.scrollY > 400 ? "block" : "none";</code></pre></details></div>
+  <div class="card"><span class="lvl mid">Medium</span><h3>Copy-email button</h3>
+    <p>One click copies your email to the clipboard.</p>
+    <details><summary>Peek at the code</summary>
+      <pre><code>document.querySelector("#copyEmail").addEventListener("click", () => {
+  navigator.clipboard.writeText("you@email.com");
+  alert("Email copied! 📋");
+});</code></pre></details></div>
+  <div class="card"><span class="lvl adv">Advanced</span><h3>Show your real GitHub repos (uses fetch!)</h3>
+    <p>Remember Day 6? Fetch your own repositories from the GitHub API and list them automatically.</p>
+    <span class="search">🔍 search: github api list user repos</span>
+    <details><summary>Peek at the code</summary>
+      <pre><code>async function loadRepos() {
+  const res = await fetch("https://api.github.com/users/YOUR-USERNAME/repos");
+  const repos = await res.json();
+  repos.forEach(r => console.log(r.name, "→", r.html_url));
+  // now build cards from them, just like the person/hero apps!
+}
+loadRepos();</code></pre></details></div>
+  <div class="card"><span class="lvl adv">Advanced</span><h3>Scroll-reveal animations</h3>
+    <p>Sections fade/slide in as you scroll to them.</p>
+    <span class="search">🔍 search: AOS animate on scroll library</span></div>
+  <div class="card"><span class="lvl adv">Advanced</span><h3>A working contact form</h3>
+    <p>Forms need a "backend" to actually send mail, but a free service can do it for you without one.</p>
+    <span class="search">🔍 search: formspree contact form</span></div>
+
+  <h2>🚀 Step 4 — Go beyond (search &amp; experiment)</h2>
+  <div class="card"><h3>Things worth exploring on your own</h3>
+    <p>You won't have been taught these, and that's the point. Pick one, watch a short video, and try it:</p>
+    <p style="margin-top:8px">
+      <span class="search">🔍 css keyframes animation</span>
+      <span class="search">🔍 css grid layout</span>
+      <span class="search">🔍 particles.js background</span>
+      <span class="search">🔍 gsap animation</span>
+      <span class="search">🔍 tailwind css</span>
+      <span class="search">🔍 responsive design media queries</span>
+    </p></div>
+
+  <div class="online">
+    <h2>🌐 Step 5 — Put it online (free!)</h2>
+    <p>A portfolio is meant to be <b>shared</b>. Both of these give you a real link in minutes, no cost:</p>
+    <p style="margin-top:8px"><b>Easiest:</b> go to <code>netlify.com/drop</code> and drag your project folder onto the page. Done.
+    &nbsp; <span class="search">🔍 search: netlify drop</span></p>
+    <p style="margin-top:8px"><b>Developer way:</b> push your folder to a GitHub repo and turn on <b>GitHub Pages</b>. &nbsp;
+    <span class="search">🔍 search: github pages setup</span></p>
+    <p style="margin-top:10px">Then update your Projects links, and send your live portfolio to a friend. 🎉</p>
+  </div>
+
+  <footer>Your page, your rules · Build something you're proud of 💜</footer>
+</body></html>

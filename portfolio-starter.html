@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✏️ EDIT: the browser-tab title -->
+  <title>Aarav Sharma</title>
+
+  <style>
+    /* ===== One accent colour — change this to re-theme links ===== */
+    :root { --accent:#4f46e5; --text:#1a1a1a; --muted:#666; --bg:#ffffff; --line:#eaeaea; }
+    body.dark { --text:#e8e8e8; --muted:#999; --bg:#121212; --line:#2a2a2a; }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.7;
+    }
+    .wrap { max-width:600px; margin:0 auto; padding:64px 24px; }
+
+    .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:48px; }
+    .top strong { font-size:1rem; }
+    .toggle { background:none; border:none; color:var(--muted); cursor:pointer; font-size:.9rem; }
+    .toggle:hover { color:var(--text); }
+
+    h1 { font-size:2rem; margin-bottom:6px; }
+    .intro { color:var(--muted); font-size:1.15rem; margin-bottom:8px; }
+
+    h2 { font-size:1.05rem; margin:44px 0 12px; }
+    p { margin-bottom:12px; }
+    .muted { color:var(--muted); }
+
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    ul { list-style:none; }
+    li { margin-bottom:16px; }
+
+    hr { border:none; border-top:1px solid var(--line); margin:44px 0 20px; }
+    footer { color:var(--muted); font-size:.85rem; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- top bar: your name + a simple dark-mode switch -->
+    <div class="top">
+      <strong>Aarav Sharma</strong>              <!-- ✏️ EDIT: your name -->
+      <button class="toggle" id="themeBtn">dark mode</button>
+    </div>
+
+    <!-- ===== INTRO ===== -->
+    <!-- ✏️ EDIT: your name and one-line intro -->
+    <h1>Hi, I'm Aarav 👋</h1>
+    <p class="intro">A BCA student in Biratnagar learning to build for the web.</p>
+
+    <!-- ===== ABOUT ===== -->
+    <h2>About</h2>
+    <!-- ✏️ EDIT: two or three honest sentences about you -->
+    <p>I'm just getting started with web development and I love how a few lines of code
+    can turn into something real. I built my first apps in a week-long bootcamp and I'm
+    excited to keep learning.</p>
+
+    <!-- ===== PROJECTS ===== -->
+    <h2>Projects</h2>
+    <!-- ✏️ EDIT: your real projects. Put the link in href="" -->
+    <ul>
+      <li>
+        <a href="#">Task Manager</a> — a to-do app that adds, completes and deletes tasks, and remembers them.<br>
+        <span class="muted">HTML · CSS · JavaScript</span>
+      </li>
+      <li>
+        <a href="#">Hero Finder</a> — fetches live data from an API and shows a hero's photo and stats.<br>
+        <span class="muted">Fetch · APIs</span>
+      </li>
+      <!-- copy a <li> above to add another project -->
+    </ul>
+
+    <!-- ===== CONTACT ===== -->
+    <h2>Contact</h2>
+    <!-- ✏️ EDIT: your real email and links -->
+    <p>
+      Email me at <a href="mailto:you@email.com">you@email.com</a><br>
+      Find me on <a href="#">GitHub</a> and <a href="#">LinkedIn</a>.
+    </p>
+
+    <hr>
+    <footer>Built with HTML, CSS &amp; JavaScript · <span id="year"></span></footer>
+  </div>
+
+  <!-- ===== a little JavaScript ===== -->
+  <script>
+    // dark-mode toggle that remembers your choice
+    const btn = document.querySelector("#themeBtn");
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      btn.textContent = "light mode";
+    }
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const dark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", dark ? "dark" : "light");
+      btn.textContent = dark ? "light mode" : "dark mode";
+    });
+
+    // fill in the current year automatically
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    // 👉 YOUR TURN: add more here (see the ideas sheet)
+  </script>
+</body>
+</html>
